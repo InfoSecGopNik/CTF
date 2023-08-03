@@ -1,5 +1,5 @@
 ---
 layout: archive-dates
-permalink: /dates/
+permalink: /about/
 title: About Me
 ---
