@@ -1,8 +1,15 @@
 ---
 layout: page
-title: About
+# title: About
 ---
 
-**Not Pure Poole** is a simple, beautiful, and powerful Jekyll theme for blogs. It is built on [Poole](https://github.com/poole/poole) and [Pure](https://purecss.io/).
+Hello, my name is Vadim. I’m a security research and Hack The Box player. Actually, I live in Argentina and my interest include:
 
-For more information about Not Pure Poole, please browse the [README](https://github.com/vszhub/not-pure-poole) file.
+Research
+Bug Bounty
+Offensive Active Directory
+Red Teaming
+Programming
+
+Hack the box profile: b1ner0ne
+GitHub: https://github.com/InfoSecGopNik
