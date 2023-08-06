@@ -2,7 +2,7 @@
 layout: post
 title: Web explotation - first steps
 tags: CTF, Deloitte, Portal.Hackazon, WebApp
-date: 2023-08-xx
+date: 2023-08-06
 ---
 Coming soon
 
