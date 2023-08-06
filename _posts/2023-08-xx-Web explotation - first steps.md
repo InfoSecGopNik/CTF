@@ -1,9 +1,8 @@
 ---
 layout: post
-title: Testing MathJax
-tags: CTF, test, test2
-math: true
-date: 2020-10-02 15:32 +0800
+title: Web explotation - first steps
+tags: CTF, Deloitte, Portal.Hacazon, Web Application
+date: 2023-08-xx
 ---
 Not Pure Poole supports [MathJax](https://www.mathjax.org/). You can enable it on a page by setting `math: true` in the front matter.
 
