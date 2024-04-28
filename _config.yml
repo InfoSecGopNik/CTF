@@ -1,7 +1,6 @@
 # Setup
 title: Principle Of Parsimony
 description: All things being equal, the simplest solution tends to be the best one.
-url: https://vszhub.github.io
 #avatar: /avatar.jpeg
 paginate: 5
 permalink: pretty
@@ -26,19 +25,6 @@ exclude:
   - README.md
   - scripts/
   - not-pure-poole.gemspec
-
-# Optimize Jekyl SEO Tag
-twitter:
-  username: vszhub
-  card: summary
-logo: logo.png
-social:
-  name: Songzi Vong
-  links:
-    - https://twitter.com/vszhub
-    - https://github.com/vszhub
-google_site_verification: xxxxx
-lang: en
 
 sass:
   sass_dir: _sass
