@@ -201,9 +201,6 @@ As we saw in the result of the third flag, it is possible to modify or delete th
 This is everything, I hope you enjoyed the write-up and learned something new. 
 Happy hacking! :)
 <br>
-
-![placeholder](images/Web_exploitation_first_steps/26.png "Test")
-![](/assets/images/Web_exploitation_first_steps/26.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/26.png)
 
 
