@@ -2,16 +2,13 @@
 layout: post
 title: Web explotation - first steps
 tags: CTF, Deloitte, Portal.Hackazon, WebApp
-date: 2023-08-06
+date: 2024-09-01
 ---
 
 ## Overview
 Web exploitation - First Steps is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the Hackazon Cyber Academy, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of the principle of parsimony, which will be our methodology and guide to solving any challenge we share in this blog.
 
-
-
 ### Challenge Info
-<br>
 <table>
   <thead>
     <tr>
@@ -50,7 +47,7 @@ Web exploitation - First Steps is a beginner's challenge for people taking their
 <li>CyberChef (https://gchq.github.io/CyberChef/) (optional, no mandatory)</li>
 <li>Burp Suite or Owasp Zap (optional)</li>
 </ul>
-
+<br>
 ### Enumeration
 As this challenge has a web application-oriented focus, one of the first steps in listing web-based services would be to review the following points:
 
