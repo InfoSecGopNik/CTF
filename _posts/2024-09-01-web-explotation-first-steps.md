@@ -76,7 +76,6 @@ The objective of this challenge is to find the hidden Flag but in this case, in 
 <li>HTTP request: sent by the client to trigger an action on the server.</li>
 <li>HTTP response: that are the answers from the server.</li>
 <br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/4.png)
 
 Using the **Web developer tools**, we can see in the **Network** tab how the browser communicates with the server along with the headers that are part of the communication. Within these headers is our second Flag.
