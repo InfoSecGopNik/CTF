@@ -60,7 +60,7 @@ As this challenge has a web application-oriented focus, one of the first steps i
 <li>To review commented or hidden content within the front-end.</li>
 <li>To search for information that may be useful in files such as JS, txt, old, bak, etc.</li>
 <li>After going through the page, we will test with default credentials and see that there are no default users.</li>
-
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/26.png)
 [imagen2]
 <br>
 
