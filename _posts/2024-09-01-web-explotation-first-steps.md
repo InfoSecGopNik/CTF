@@ -202,7 +202,9 @@ This is everything, I hope you enjoyed the write-up and learned something new.
 Happy hacking! :)
 <br>
 
-![placeholder](_posts/images/Web_exploitation_first_steps/26.png/800x400 "Large example image")
+![placeholder](_posts/images/Web_exploitation_first_steps/26.png "Large example image")
+![placeholder](_posts/images/Web_exploitation_first_steps/26.png "Medium example image"){: .align-center}
+
 
 ### Reference links
 <li>https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages</li>
