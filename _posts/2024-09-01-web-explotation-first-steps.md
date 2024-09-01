@@ -7,11 +7,11 @@ date: 2024-09-01
 <br>
 
 ## Overview
-**Web exploitation - First Steps** is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the **Hackazon Cyber Academy**, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of the principle of parsimony, which will be our methodology and guide to solving any challenge we share in this blog.
+**Web exploitation - First Steps** is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the **Hackazon Cyber Academy**, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of **the principle of parsimony**, which will be our methodology and guide to solving any challenge we share in this blog.
 <br>
 <br>
 
-### Challenge Info
+## Challenge Info
 <table>
   <thead>
     <tr>
@@ -44,19 +44,19 @@ date: 2024-09-01
 </table>
 <br>
 
-### Tools
+## Tools
 <ul>
 <li>Browser Navegador</li>
 <li>CyberChef (https://gchq.github.io/CyberChef/) (optional, no mandatory)</li>
 <li>Burp Suite or Owasp Zap (optional)</li>
 </ul>
 <br>
-### Enumeration
+## Enumeration
 As this challenge has a web application-oriented focus, one of the first steps in listing web-based services would be to review the following points:
 
 <li>To list files and directories (using ffuf, wfuzz, feroxbuster, etc).</li>
 <li>To test for Default Credentials (such as admin:admin).</li>
-<li>To check if the web application has a "robots.txt" file.</li>
+<li>To check if the web application has a robots.txt file.</li>
 <li>To review commented or hidden content within the front-end.</li>
 <li>To search for information that may be useful in files such as JS, txt, old, bak, etc.</li>
 <li>After going through the page, we will test with default credentials and see that there are no default users.</li>
@@ -72,7 +72,9 @@ The objective of this challenge will be to find the flag hidden somewhere in the
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/3.png)
 
 ## Flag #2: FIND THE HIDDEN FLAG #2
-The objective of this challenge is to find the hidden Flag but in this case, in a more specific location such as the HTTP Response. HTTP messages are how data is exchanged between a server and a client. There are two types of messages: requests sent by the client to trigger an action on the server and responses that are the answers from the server.
+The objective of this challenge is to find the hidden Flag but in this case, in a more specific location such as the HTTP Response. HTTP messages are how data is exchanged between a server and a client. There are two types of messages: 
+<li>HTTP request: sent by the client to trigger an action on the server.</li>
+<li>HTTP response: that are the answers from the server.</li>
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/4.png)
@@ -88,12 +90,12 @@ We have already solved the easiest part so now we are going to add a degree of d
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/6.png)
 
-Using the **Web developer tools**, we see that the signup functionality is set with the attribute “disabled”. This means that it is not available at the front-end level.
+Using the **Web developer tools**, we see that the signup functionality is set with the attribute **disabled**. This means that it is not available at the front-end level.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/7.png)
 
-If we remove the value of “disabled” from the signup functionality we see that from the front end, the option is accessible and when entering we get our third flag.
+If we remove the value of disabled from the signup functionality we see that from the front end, the option is accessible and when entering we get our third flag.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/8.png)
@@ -105,7 +107,7 @@ Our next challenge indicates that we need to authenticate with Fred's account bu
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/9.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/10.png)
 
-When authenticating with the credentials, it tells us that the password is incorrect but the user is valid. Even if we try to decode the password using Base64 or HTML, the result is the same.
+When authenticating with the credentials, it tells us that the password is incorrect but the user is valid. Even if we try to decode the password using **Base64** or **HTML**, the result is the same.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/11.png)
@@ -148,45 +150,47 @@ function decode(s) {
             }
         }
 ```
+Setting the breakpoints in the first block, we see that while debugging the variables username and password they are set with the values we have entered by keyboard while “good_pw” takes the value of valid which has the username and a hash.
 <br>
-Setting the breakpoints in the first block, we see that while debugging the variables “username” and “password” they are set with the values we have entered by keyboard while “good_pw” takes the value of “valid” which has the username and a hash.
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/14.png)
 <br>
-Let's analyze the decode function of our second block which receives the hash “MUWiq3AmLKOsqTIlL2ImK3yg” inside the “s” parameter. In line n° 5 we see the value of the parameter “s” using the ROT13 cipher. Resulting in: 
+Let's analyze the decode function of our second block which receives the hash “MUWiq3AmLKOsqTIlL2ImK3yg” inside the **s** parameter. In line n° 5 we see the value of the parameter **s** using the **ROT13 cipher**. Resulting in: 
 <li>s = ZHJvd3NzYXBfdGVyY2VzX3lt</li>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/15.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/16.png)
 <br>
-Then in line n° 6 we see how the new value of “s” is passed by the “atob()” function. **The WindowBase64.atob()** function decodes a data string that had been encoded using base64. You can use the **window.btoa()** method to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
+Then in line n° 6 we see how the new value of **s** is passed by the **atob() function**. **The WindowBase64.atob() function** decodes a data string that had been encoded using base64. You can use the **window.btoa() method** to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
 <li>s = drowssap_terces_ym</li>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/17.png)
 <br>
-Finally, we see how the function takes our string and applies a transformation to it. First, it converts the string into an array of characters with split(“”), then it inverts the array with reverse(), and finally, it joins the characters back into a string with join(“”). The result is:
+Finally, we see how the function takes our string and applies a transformation to it. First, it converts the string into an array of characters with **split(“”)**, then it inverts the array with **reverse()**, and finally, it joins the characters back into a string with **join(“”)**. The result is:
 <li>s = my_secret_password</li>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/18.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/19.png)
 <br>
-If we observe the last block, we can see how the value of “good_pw” is validated with the value of our password. If they are different, the function returns a message “Invalid password”.
+If we observe the last block, we can see how the value of “good_pw” is validated with the value of our password. If they are different, the function returns a message Invalid password.
+<br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/20.png)
 <br>
 If we modify the password value to “my_secret_password”, we see that the password is valid and allows us to authenticate with the user Fred resulting in the fourth flag of our series of challenges.
 <br>
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/21.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/22.png)
 
 ## Flag #5: BECOME AN ADMINISTRATOR
-As a last challenge, we are going to rely on all the tools and methodologies already seen to become an administrator user. If we go to the “admin” portal, it returns an “access denied” message and, at the same time, the admin portal does not have a login then our authentication approach should be re-oriented.
+As a last challenge, we are going to rely on all the tools and methodologies already seen to become an administrator user. If we go to the admin portal, it returns an access denied message and, at the same time, the admin portal does not have a login then our authentication approach should be re-oriented.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/23.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/24.png)
 
-If we use the **Web developer tools**, in the “Storage” tab we have all the cookies used by our web applications. In the list of cookies, there is one called “admin” whose value is False.
+If we use the **Web developer tools**, in the **Storage** tab we have all the cookies used by our web applications. In the list of cookies, there is one called admin whose value is False.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/25.png)
