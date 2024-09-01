@@ -202,11 +202,7 @@ This is everything, I hope you enjoyed the write-up and learned something new.
 Happy hacking! :)
 <br>
 
-![placeholder](/images/Web_exploitation_first_steps/26.png "Large example image")
-![placeholder](images/Web_exploitation_first_steps/26.png "Large example image")
-<img src="/images/Web_exploitation_first_steps/26.png" alt="Imagen de unas nubes">
-![image](_posts/images/Web_exploitation_first_steps/26.png)
-![placeholder](_posts/images/Web_exploitation_first_steps/26.png "Medium example image"){: .align-center}
+![placeholder](images/Web_exploitation_first_steps/26.png "Test")
 
 
 ### Reference links
