@@ -9,7 +9,7 @@ The Jekyll theme **Not Pure Poole** v0.1.0 was released!
 
 
 ## Overview
-Web exploitation - First Steps is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the Hackazon Cyber Academy, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of the principle of parsimony, which will be our methodology and guide to solving any challenge we share in this blog.
+**Web exploitation - First Steps** is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the **Hackazon Cyber Academy**, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of the principle of parsimony, which will be our methodology and guide to solving any challenge we share in this blog.
 
 ### Challenge Info
 <table>
@@ -66,7 +66,7 @@ As this challenge has a web application-oriented focus, one of the first steps i
 <br>
 
 ## Flag #1: FIND THE HIDDEN FLAG #1
-The objective of this challenge will be to find the flag hidden somewhere in the application. If we apply what we have seen in Enumeration, one of the first things we could check would be the page source of our application or use web developer tools like Inspector to inspect and modify the front-end web elements. Resulting in the first flag as part of a hidden comment.
+The objective of this challenge will be to find the flag hidden somewhere in the application. If we apply what we have seen in **Enumeration**, one of the first things we could check would be the **page source** of our application or use **web developer tools** like **Inspector** to inspect and modify the front-end web elements. Resulting in the first flag as part of a hidden comment.
 [imagen3]
 <br>
 
@@ -75,7 +75,7 @@ The objective of this challenge is to find the hidden Flag but in this case, in 
 <br>
 [imagen4]
 <br>
-Using the Web developer tools, we can see in the Network tab how the browser communicates with the server along with the headers that are part of the communication. Within these headers is our second Flag.
+Using the **Web developer tools**, we can see in the **Network** tab how the browser communicates with the server along with the headers that are part of the communication. Within these headers is our second Flag.
 <br>
 [imagen5]
 <br>
@@ -85,7 +85,7 @@ We have already solved the easiest part so now we are going to add a degree of d
 <br>
 [imagen6]
 <br>
-Using the Web developer tools, we see that the signup functionality is set with the attribute “disabled”. This means that it is not available at the front-end level.
+Using the **Web developer tools**, we see that the signup functionality is set with the attribute “disabled”. This means that it is not available at the front-end level.
 <br>
 [imagen7]
 <br>
@@ -94,7 +94,7 @@ If we remove the value of “disabled” from the signup functionality we see th
 [imagen8]
 <br>
 ##  Flag #4: LOGIN TO FRED'S ACCOUNT
-Our next challenge indicates that we need to authenticate with Fred's account but we are not sure what Fred's credentials are. However, by using the Page source we can find Fred's password.
+Our next challenge indicates that we need to authenticate with Fred's account but we are not sure what Fred's credentials are. However, by using the **Page source** we can find Fred's password.
 <br>
 [imagen9]
 <br>
@@ -108,7 +108,7 @@ When authenticating with the credentials, it tells us that the password is incor
 <br>
 [imagen12]
 <br>
-Inside our Web developer tools, let's use the Debugger tab and analyze the login flow separating it into 3 blocks with the help of breakpoints.
+Inside our **Web developer tools**, let's use the **Debugger tab** and analyze the login flow separating it into 3 blocks with the help of breakpoints.
 <br>
 [imagen13]
 <br>
@@ -152,20 +152,20 @@ Setting the breakpoints in the first block, we see that while debugging the vari
 [imagen14]
 <br>
 Let's analyze the decode function of our second block which receives the hash “MUWiq3AmLKOsqTIlL2ImK3yg” inside the “s” parameter. In line n° 5 we see the value of the parameter “s” using the ROT13 cipher. Resulting in: 
-s = ZHJvd3NzYXBfdGVyY2VzX3lt
+<li>s = ZHJvd3NzYXBfdGVyY2VzX3lt</li>
 <br>
 [imagen15]
 <br>
 <br>
 [imagen16]
 <br>
-Then in line n° 6 we see how the new value of “s” is passed by the “atob()” function. The WindowBase64.atob() function decodes a data string that had been encoded using base64. You can use the window.btoa() method to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
-s = drowssap_terces_ym
+Then in line n° 6 we see how the new value of “s” is passed by the “atob()” function. **The WindowBase64.atob()** function decodes a data string that had been encoded using base64. You can use the **window.btoa()** method to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
+<li>s = drowssap_terces_ym</li>
 <br>
 [imagen17]
 <br>
 Finally, we see how the function takes our string and applies a transformation to it. First, it converts the string into an array of characters with split(“”), then it inverts the array with reverse(), and finally, it joins the characters back into a string with join(“”). The result is:
-s = my_secret_password
+<li>s = my_secret_password</li>
 <br>
 [imagen18]
 <br>
@@ -192,7 +192,7 @@ As a last challenge, we are going to rely on all the tools and methodologies alr
 <br>
 [imagen24]
 <br>
-If we use the Web developer tools, in the “Storage” tab we have all the cookies used by our web applications. In the list of cookies, there is one called “admin” whose value is False.
+If we use the **Web developer tools**, in the “Storage” tab we have all the cookies used by our web applications. In the list of cookies, there is one called “admin” whose value is False.
 <br>
 [imagen25]
 <br>
