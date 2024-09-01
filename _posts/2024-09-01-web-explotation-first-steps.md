@@ -5,10 +5,12 @@ tags: CTF, Deloitte, Portal.Hackazon, WebApp
 date: 2024-09-01
 ---
 <br>
+
 ## Overview
 **Web exploitation - First Steps** is a beginner's challenge for people taking their first steps in the world of the CTF. The challenge is not hard, but having a basic knowledge of web applications and browser tools would be helpful. In this challenge of the **Hackazon Cyber Academy**, we’re going to introduce concepts about debugging in the browser. In addition, we will introduce the concept of the principle of parsimony, which will be our methodology and guide to solving any challenge we share in this blog.
 <br>
 <br>
+
 ### Challenge Info
 <table>
   <thead>
