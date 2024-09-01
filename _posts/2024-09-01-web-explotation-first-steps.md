@@ -5,7 +5,7 @@ tags: CTF, Deloitte, Portal.Hackazon, WebApp
 date: 2024-09-01
 ---
 
-The Jekyll theme **Not Pure Poole** v0.1.0 was released!
+
 
 
 ## Overview
