@@ -61,12 +61,12 @@ As this challenge has a web application-oriented focus, one of the first steps i
 <li>To search for information that may be useful in files such as JS, txt, old, bak, etc.</li>
 <li>After going through the page, we will test with default credentials and see that there are no default users.</li>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/1.png)
-2
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/2.png)
 <br>
 
 ## Flag #1: FIND THE HIDDEN FLAG #1
 The objective of this challenge will be to find the flag hidden somewhere in the application. If we apply what we have seen in **Enumeration**, one of the first things we could check would be the **page source** of our application or use **web developer tools** like **Inspector** to inspect and modify the front-end web elements. Resulting in the first flag as part of a hidden comment.
-3
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/3.png)
 <br>
 
 ## Flag #2: FIND THE HIDDEN FLAG #2
@@ -90,7 +90,7 @@ Using the **Web developer tools**, we see that the signup functionality is set w
 <br>
 If we remove the value of “disabled” from the signup functionality we see that from the front end, the option is accessible and when entering we get our third flag.
 <br>
-8
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/8.png)
 <br>
 ##  Flag #4: LOGIN TO FRED'S ACCOUNT
 Our next challenge indicates that we need to authenticate with Fred's account but we are not sure what Fred's credentials are. However, by using the **Page source** we can find Fred's password.
@@ -98,7 +98,7 @@ Our next challenge indicates that we need to authenticate with Fred's account bu
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/9.png)
 <br>
 <br>
-10
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/10.png)
 <br>
 When authenticating with the credentials, it tells us that the password is incorrect but the user is valid. Even if we try to decode the password using Base64 or HTML, the result is the same.
 <br>
@@ -161,7 +161,7 @@ Let's analyze the decode function of our second block which receives the hash �
 Then in line n° 6 we see how the new value of “s” is passed by the “atob()” function. **The WindowBase64.atob()** function decodes a data string that had been encoded using base64. You can use the **window.btoa()** method to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
 <li>s = drowssap_terces_ym</li>
 <br>
-17
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/17.png)
 <br>
 Finally, we see how the function takes our string and applies a transformation to it. First, it converts the string into an array of characters with split(“”), then it inverts the array with reverse(), and finally, it joins the characters back into a string with join(“”). The result is:
 <li>s = my_secret_password</li>
@@ -169,11 +169,11 @@ Finally, we see how the function takes our string and applies a transformation t
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/18.png)
 <br>
 <br>
-19
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/19.png)
 <br>
 If we observe the last block, we can see how the value of “good_pw” is validated with the value of our password. If they are different, the function returns a message “Invalid password”.
 <br>
-20
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/20.png)
 <br>
 If we modify the password value to “my_secret_password”, we see that the password is valid and allows us to authenticate with the user Fred resulting in the fourth flag of our series of challenges.
 <br>
