@@ -205,6 +205,7 @@ Happy hacking! :)
 ![placeholder](/images/Web_exploitation_first_steps/26.png "Large example image")
 ![placeholder](images/Web_exploitation_first_steps/26.png "Large example image")
 <img src="/images/Web_exploitation_first_steps/26.png" alt="Imagen de unas nubes">
+![image](/images/Web_exploitation_first_steps/26.png)
 ![placeholder](_posts/images/Web_exploitation_first_steps/26.png "Medium example image"){: .align-center}
 
 
