@@ -204,6 +204,7 @@ Happy hacking! :)
 
 ![placeholder](images/Web_exploitation_first_steps/26.png "Test")
 ![](/assets/images/Web_exploitation_first_steps/26.png)
+![](/Web_exploitation_first_steps/26.png)
 
 
 ### Reference links
