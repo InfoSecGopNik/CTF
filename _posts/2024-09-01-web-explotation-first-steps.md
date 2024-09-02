@@ -46,8 +46,8 @@ date: 2024-09-01
 
 ## Tools
 <ul>
-<li>Browser Navegador</li>
-<li>CyberChef (https://gchq.github.io/CyberChef/) (optional, no mandatory)</li>
+<li>Browser</li>
+<li>CyberChef (https://gchq.github.io/CyberChef/) (Not mandatory)</li>
 <li>Burp Suite or Owasp Zap (optional)</li>
 </ul>
 <br>
