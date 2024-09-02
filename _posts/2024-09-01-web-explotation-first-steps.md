@@ -149,12 +149,12 @@ function decode(s) {
             }
         }
 ```
-Setting the breakpoints in the first block, we see that while debugging the variables username and password they are set with the values we have entered by keyboard while “good_pw” takes the value of valid which has the username and a hash.
+Setting the breakpoints in the first block, we see that while debugging the variables username and password they are set with the values we have entered by keyboard while “good_pw” takes the value of valid which has the username and a ciphertext.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/14.png)
 <br>
-Let's analyze the decode function of our second block which receives the hash “MUWiq3AmLKOsqTIlL2ImK3yg” inside the **s** parameter. In line n° 5 we see the value of the parameter **s** using the **ROT13 cipher**. Resulting in: 
+Let's analyze the decode function of our second block which receives the ciphertext “MUWiq3AmLKOsqTIlL2ImK3yg” inside the **s** parameter. In line n° 5 we see the value of the parameter **s** using the **ROT13 cipher**. Resulting in: 
 <li>s = ZHJvd3NzYXBfdGVyY2VzX3lt</li>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/15.png)
