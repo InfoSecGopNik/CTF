@@ -186,7 +186,7 @@ If we modify the password value to “my_secret_password”, we see that the pas
 As a last challenge, we are going to rely on all the tools and methodologies already seen to become an administrator user. If we go to the admin portal, it returns an access denied message and, at the same time, the admin portal does not have a login then our authentication approach should be re-oriented.
 <br>
 <br>
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/23.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/23.png){: .align-center}
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/24.png)
 
 If we use the **Web developer tools**, in the **Storage** tab we have all the cookies used by our web applications. In the list of cookies, there is one called admin whose value is False.
@@ -200,7 +200,7 @@ This is everything, I hope you enjoyed the write-up and learned something new.
 Happy hacking! :)
 <br>
 <br>
-![](/_posts/images/Web_exploitation_first_steps/26.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/26.png)
 
 
 ### Reference links
