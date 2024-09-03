@@ -110,7 +110,7 @@ When authenticating with the credentials, it tells us that the password is incor
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/11.png)
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/12.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/12.png){: .align-center}
 
 Inside our **Web developer tools**, let's use the **Debugger tab** and analyze the login flow separating it into 3 blocks with the help of breakpoints.
 <br>
@@ -158,7 +158,7 @@ Let's analyze the decode function of our second block which receives the ciphert
 <li>s = ZHJvd3NzYXBfdGVyY2VzX3lt</li>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/15.png)
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/16.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/16.png){: .align-center}
 <br>
 Then in line n° 6 we see how the new value of **s** is passed by the **atob() function**. **The WindowBase64.atob() function** decodes a data string that had been encoded using base64. You can use the **window.btoa() method** to encode and transmit data that might otherwise cause communication problems. After being transmitted you can use the window.atob() method to decode the data again. Resulting in:
 <li>s = drowssap_terces_ym</li>
