@@ -200,7 +200,7 @@ This is everything, I hope you enjoyed the write-up and learned something new.
 Happy hacking! :)
 <br>
 <br>
-26
+[image](_posts/images/Web_exploitation_first_steps/26.png)
 
 
 ### Reference links
