@@ -24,7 +24,6 @@ date: 2025-06-08
     </tr>
   </tbody>
 </table>
-<br>
 ## Tools
 <ul>
 <li>Nmap</li>
@@ -44,7 +43,7 @@ We will start by enumerating protocols and services, focusing on the following p
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/1.png){: .align-center}
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/3.png)
-<br>
+
 ## Flag: Call an Ambulance
 After completing the enumeration phase and reviewing the web application, we didn’t find anything noteworthy. However, the challenge description mentions several SSL/TLS configuration vulnerabilities.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/4.png)
