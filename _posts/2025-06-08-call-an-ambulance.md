@@ -47,7 +47,7 @@ We will start by enumerating protocols and services, focusing on the following p
 <li>List vendors and software versions.</li>
 <br>
 <br>
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/1.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/1.png){: .align-center}
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/3.png)
 
