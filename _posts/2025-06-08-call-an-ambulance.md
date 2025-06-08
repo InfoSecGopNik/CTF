@@ -4,6 +4,7 @@ title: Call an Ambulance
 tags: CTF, Deloitte, Portal.Hackazon, WebApp, SSL
 date: 2025-06-08
 ---
+<br>
 
 ## Overview
 **Call an Ambulance** challenge focuses on exploiting outdated SSL protocol configurations. This easy challenge will allow us to analyze and take advantage of a known SSL vulnerability. We will also explore how to use Metasploit modules and known exploits to carry out the attack.
