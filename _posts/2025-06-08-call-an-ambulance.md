@@ -84,6 +84,7 @@ We’ve already seen how to detect and confirm the presence of the Heartbleed vu
 Well, now we’re going to explain how Heartbleed originated and what key components make it so dangerous.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/10.png){: .align-center}
 
 Heartbleed is believed to have existed before 2012, but it was Google researcher Neel Mehta who confirmed that the vulnerability could be used to access private data even in updated systems. Heartbleed, identified as CVE-2014-0160, is a vulnerability that allows an attacker to read up to 64 KB of memory per request from any connected client or server. The name “Heartbleed” comes from the fact that the flaw lies in the OpenSSL implementation of the Heartbeat extension for the TLS and DTLS protocols, as defined in RFC 6520.
 <br>
