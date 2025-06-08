@@ -7,8 +7,6 @@ date: 2025-06-08
 
 ## Overview
 **Call an Ambulance** challenge focuses on exploiting outdated SSL protocol configurations. This easy challenge will allow us to analyze and take advantage of a known SSL vulnerability. We will also explore how to use Metasploit modules and known exploits to carry out the attack.
-<br>
-<br>
 ## Challenge Info
 <table>
   <thead>
@@ -84,10 +82,8 @@ Due to a flaw in the code, the server accepts the message and does not validate 
 <li>OpenSSL 1.0.0 branch is NOT vulnerable.</li>
 <li>OpenSSL 0.9.8 branch is NOT vulnerable.</li>
 </ul>
-
+<br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/13.png)
 <br>
 ### Reference links
