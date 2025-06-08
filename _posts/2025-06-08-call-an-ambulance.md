@@ -4,7 +4,6 @@ title: Call an Ambulance
 tags: CTF, Deloitte, Portal.Hackazon, WebApp, SSL
 date: 2025-06-08
 ---
-<br>
 
 ## Overview
 **Call an Ambulance** challenge focuses on exploiting outdated SSL protocol configurations. This easy challenge will allow us to analyze and take advantage of a known SSL vulnerability. We will also explore how to use Metasploit modules and known exploits to carry out the attack.
@@ -26,7 +25,6 @@ date: 2025-06-08
   </tbody>
 </table>
 <br>
-
 ## Tools
 <ul>
 <li>Nmap</li>
@@ -44,25 +42,18 @@ We will start by enumerating protocols and services, focusing on the following p
 <li>To review commented or hidden content within the front-end.</li>
 <li>List vendors and software versions.</li>
 <br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/1.png){: .align-center}
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/3.png)
-
+<br>
 ## Flag: Call an Ambulance
 After completing the enumeration phase and reviewing the web application, we didn’t find anything noteworthy. However, the challenge description mentions several SSL/TLS configuration vulnerabilities.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/4.png)
 <br>
 To check if the challenge is related to SSL/TLS protocol vulnerabilities, let's run sslscan and review the application's configuration.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/5.png)
 <br>
 Indeed, our web application supports weak protocols and ciphers such as TLS 1.0, TLS 1.1, and SSLv3. We have confirmed that the application is not vulnerable to Shellshock. Possible remaining options include POODLE and Heartbleed—both are known vulnerabilities that affect obsolete protocols. Let’s verify whether the server is vulnerable to Heartbleed using a Metasploit auxiliary module.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/6.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/7.png)
 <br>
@@ -73,8 +64,6 @@ When running the auxiliary module in SCAN mode, we observe that the web applicat
 
 ## Manual exploitation
 As we have seen, it is possible to exploit Heartbleed using Metasploit modules. But what if we want to exploit it manually? To do so, we can search for available exploits using searchsploit (if we are on Kali Linux) or by checking online resources (see reference links). When performing the search, we find several options, but the one we are most interested in is “Memory Disclosure.” We execute it by passing the target IP address and port as parameters, and it returns a memory dump containing the flag.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/9.png)
 <br>
 ## Understanding Heartbleed
