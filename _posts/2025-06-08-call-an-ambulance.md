@@ -95,11 +95,13 @@ The client sends a message «Hello» along with a piece of data that specifies t
 The server receives this information and responds with the same message, as expected. This is a typical Heartbeat communication.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/11.png)
 
 Now we’re going to try to corrupt memory by modifying the message size to read “23” characters «18» more than the actual «Hello» message.
 Due to a flaw in the code, the server accepts the message and does not validate the declared size in the response. As a result, it replies with the original «Hello» message plus 18 additional bytes from whatever happens to be in memory at that moment.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/12.png)
 
 What versions of the OpenSSL are affected?
 <ul>
