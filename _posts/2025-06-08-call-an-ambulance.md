@@ -10,7 +10,6 @@ date: 2025-06-08
 **Call an Ambulance** challenge focuses on exploiting outdated SSL protocol configurations. This easy challenge will allow us to analyze and take advantage of a known SSL vulnerability. We will also explore how to use Metasploit modules and known exploits to carry out the attack.
 <br>
 <br>
-
 ## Challenge Info
 <table>
   <thead>
@@ -91,14 +90,14 @@ Heartbleed is believed to have existed before 2012, but it was Google researcher
 <br>
 
 Let’s analyze the structure of the vulnerability using a TLS (Transport Layer Security) communication channel between a client and a server as an example.
-The client sends a message «Hello» along with a piece of data that specifies the length of the message, in this case, «5» characters.
+The client sends a message **«Hello»** along with a piece of data that specifies the length of the message, in this case, **«5»** characters.
 The server receives this information and responds with the same message, as expected. This is a typical Heartbeat communication.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/11.png)
 
-Now we’re going to try to corrupt memory by modifying the message size to read “23” characters «18» more than the actual «Hello» message.
-Due to a flaw in the code, the server accepts the message and does not validate the declared size in the response. As a result, it replies with the original «Hello» message plus 18 additional bytes from whatever happens to be in memory at that moment.
+Now we’re going to try to corrupt memory by modifying the message size to read **“23”** characters **«18»** more than the actual «Hello» message.
+Due to a flaw in the code, the server accepts the message and does not validate the declared size in the response. As a result, it replies with the original **«Hello»** message plus 18 additional bytes from whatever happens to be in memory at that moment.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/12.png)
@@ -111,8 +110,7 @@ What versions of the OpenSSL are affected?
 <li>OpenSSL 0.9.8 branch is NOT vulnerable.</li>
 </ul>
 
-This is everything, I hope you enjoyed the write-up and learned something new. 
-Happy hacking! :)
+**This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/13.png)
