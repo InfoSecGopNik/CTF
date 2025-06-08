@@ -39,7 +39,6 @@ date: 2025-06-08
 <br>
 ## Enumeration
 We will start by enumerating protocols and services, focusing on the following points:
-
 <li>To list directories (using ffuf, wfuzz, feroxbuster, etc).</li>
 <li>To check if the web application has a robots.txt file.</li>
 <li>To review commented or hidden content within the front-end.</li>
@@ -85,7 +84,7 @@ Well, now we’re going to explain how Heartbleed originated and what key compon
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/10.png){: .align-center}
 
-Heartbleed is believed to have existed before 2012, but it was Google researcher Neel Mehta who confirmed that the vulnerability could be used to access private data even in updated systems. Heartbleed, identified as CVE-2014-0160, is a vulnerability that allows an attacker to read up to 64 KB of memory per request from any connected client or server. The name “Heartbleed” comes from the fact that the flaw lies in the OpenSSL implementation of the Heartbeat extension for the TLS and DTLS protocols, as defined in RFC 6520.
+Heartbleed is believed to have existed before 2012, but it was Google researcher **Neel Mehta** who confirmed that the vulnerability could be used to access private data even in updated systems. Heartbleed, identified as **CVE-2014-0160**, is a vulnerability that allows an attacker to read up to 64 KB of memory per request from any connected client or server. The name **“Heartbleed”** comes from the fact that the flaw lies in the OpenSSL implementation of the Heartbeat extension for the TLS and DTLS protocols, as defined in **RFC 6520**.
 <br>
 <br>
 
@@ -96,13 +95,13 @@ The server receives this information and responds with the same message, as expe
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/11.png)
 
-Now we’re going to try to corrupt memory by modifying the message size to read **“23”** characters **«18»** more than the actual «Hello» message.
+Now we’re going to try to corrupt memory by modifying the message size to read **«23»** characters **«18»** more than the actual **«Hello»** message.
 Due to a flaw in the code, the server accepts the message and does not validate the declared size in the response. As a result, it replies with the original **«Hello»** message plus 18 additional bytes from whatever happens to be in memory at that moment.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/12.png)
 
-What versions of the OpenSSL are affected?
+## What versions of the OpenSSL are affected?
 <ul>
 <li>OpenSSL 1.0.1 through 1.0.1f (inclusive) are vulnerable.</li>
 <li>OpenSSL 1.0.1g is NOT vulnerable.</li>
@@ -124,5 +123,3 @@ What versions of the OpenSSL are affected?
 <li>https://www.pcmag.com/news/heartbleed-https://www.invicti.com/blog/web-security/the-heartbleed-bug/how-it-works</li>
 <li>https://www.invicti.com/blog/web-security/the-heartbleed-bug/</li>
 <li>https://github.com/adamalston/Heartbleed</li>
-
-
