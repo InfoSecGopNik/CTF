@@ -54,18 +54,18 @@ After completing the enumeration phase and reviewing the web application, we did
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/4.png)
-
+<br>
 To check if the challenge is related to SSL/TLS protocol vulnerabilities, let's run sslscan and review the application's configuration.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/5.png)
-
+<br>
 Indeed, our web application supports weak protocols and ciphers such as TLS 1.0, TLS 1.1, and SSLv3. We have confirmed that the application is not vulnerable to Shellshock. Possible remaining options include POODLE and Heartbleed—both are known vulnerabilities that affect obsolete protocols. Let’s verify whether the server is vulnerable to Heartbleed using a Metasploit auxiliary module.
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/6.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/7.png)
-
+<br>
 When running the auxiliary module in SCAN mode, we observe that the web application is vulnerable to Heartbleed. Next, we switch the module to DUMP mode, which allows us to perform a memory dump and retrieve sensitive information from the application. By running the memory dump, we are able to extract the flag string
 <br>
 <br>
@@ -76,7 +76,8 @@ As we have seen, it is possible to exploit Heartbleed using Metasploit modules. 
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/9.png)
-
+<br>
+<br>
 ## Understanding Heartbleed
 We’ve already seen how to detect and confirm the presence of the Heartbleed vulnerability using Metasploit or known exploits. But do you know why this vulnerability exists? What is the origin of Heartbleed?.
 Well, now we’re going to explain how Heartbleed originated and what key components make it so dangerous.
@@ -86,21 +87,15 @@ Well, now we’re going to explain how Heartbleed originated and what key compon
 
 Heartbleed is believed to have existed before 2012, but it was Google researcher **Neel Mehta** who confirmed that the vulnerability could be used to access private data even in updated systems. Heartbleed, identified as **CVE-2014-0160**, is a vulnerability that allows an attacker to read up to 64 KB of memory per request from any connected client or server. The name **“Heartbleed”** comes from the fact that the flaw lies in the OpenSSL implementation of the Heartbeat extension for the TLS and DTLS protocols, as defined in **RFC 6520**.
 <br>
-<br>
-
 Let’s analyze the structure of the vulnerability using a TLS (Transport Layer Security) communication channel between a client and a server as an example.
 The client sends a message **«Hello»** along with a piece of data that specifies the length of the message, in this case, **«5»** characters.
 The server receives this information and responds with the same message, as expected. This is a typical Heartbeat communication.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/11.png)
-
+<br>
 Now we’re going to try to corrupt memory by modifying the message size to read **«23»** characters **«18»** more than the actual **«Hello»** message.
 Due to a flaw in the code, the server accepts the message and does not validate the declared size in the response. As a result, it replies with the original **«Hello»** message plus 18 additional bytes from whatever happens to be in memory at that moment.
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/12.png)
-
+<br>
 ## What versions of the OpenSSL are affected?
 <ul>
 <li>OpenSSL 1.0.1 through 1.0.1f (inclusive) are vulnerable.</li>
@@ -108,13 +103,12 @@ Due to a flaw in the code, the server accepts the message and does not validate 
 <li>OpenSSL 1.0.0 branch is NOT vulnerable.</li>
 <li>OpenSSL 0.9.8 branch is NOT vulnerable.</li>
 </ul>
-
+<br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
 <br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/13.png)
-
-
+<br>
 ### Reference links
 <li>https://www.exploit-db.com/</li>
 <li>https://heartbleed.com/</li>
