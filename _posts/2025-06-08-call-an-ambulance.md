@@ -47,29 +47,37 @@ We will start by enumerating protocols and services, focusing on the following p
 <li>List vendors and software versions.</li>
 <br>
 <br>
-
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/1.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/2.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/3.png)
 
 ## Flag: Call an Ambulance
 After completing the enumeration phase and reviewing the web application, we didn’t find anything noteworthy. However, the challenge description mentions several SSL/TLS configuration vulnerabilities.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/4.png)
 
 To check if the challenge is related to SSL/TLS protocol vulnerabilities, let's run sslscan and review the application's configuration.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/5.png)
 
 Indeed, our web application supports weak protocols and ciphers such as TLS 1.0, TLS 1.1, and SSLv3. We have confirmed that the application is not vulnerable to Shellshock. Possible remaining options include POODLE and Heartbleed—both are known vulnerabilities that affect obsolete protocols. Let’s verify whether the server is vulnerable to Heartbleed using a Metasploit auxiliary module.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/6.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/7.png)
 
 When running the auxiliary module in SCAN mode, we observe that the web application is vulnerable to Heartbleed. Next, we switch the module to DUMP mode, which allows us to perform a memory dump and retrieve sensitive information from the application. By running the memory dump, we are able to extract the flag string
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/8.png)
 
 ## Manual exploitation
 As we have seen, it is possible to exploit Heartbleed using Metasploit modules. But what if we want to exploit it manually? To do so, we can search for available exploits using searchsploit (if we are on Kali Linux) or by checking online resources (see reference links). When performing the search, we find several options, but the one we are most interested in is “Memory Disclosure.” We execute it by passing the target IP address and port as parameters, and it returns a memory dump containing the flag.
 <br>
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/9.png)
 
 ## Understanding Heartbleed
 We’ve already seen how to detect and confirm the presence of the Heartbleed vulnerability using Metasploit or known exploits. But do you know why this vulnerability exists? What is the origin of Heartbleed?.
@@ -102,6 +110,9 @@ What versions of the OpenSSL are affected?
 
 This is everything, I hope you enjoyed the write-up and learned something new. 
 Happy hacking! :)
+<br>
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/call_an_ambulance/13.png)
 
 
 ### Reference links
