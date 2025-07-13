@@ -99,7 +99,7 @@ The objective of the second challenge is to access the admin panel. From our pri
 Although we successfully accessed the admin panel, there were no visible elements or functionalities allowing authentication with valid credentials. However, by re-examining the page using the **browser’s developer tools**, we find the second flag embedded in the front-end code.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/12.png)
 ## Flag #3: Connect to the TCP service
-The third challenge involves retrieving a flag via direct interaction with a TCP service. According to the Nmap results, the host is running a service on port 8080. Using Ncat, we connect to this port with nc <IP> <PORT> and receive a prompt indicating that the keyword flag must be submitted to proceed. Given that this is a web service, we then send a manual HTTP GET request to /flag using nc, which returns the third flag.
+The third challenge involves retrieving a flag via direct interaction with a TCP service. According to the Nmap results, the host is running a service on port 8080. Using Ncat, we connect to this port with **nc IP PORT** and receive a prompt indicating that the keyword flag must be submitted to proceed. Given that this is a web service, we then send a manual HTTP GET request to /flag using nc, which returns the third flag.
 
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/13.png)
 ## Flag #4: Connect to the SSL service
@@ -107,8 +107,8 @@ The fourth flag indicates that it is accessible through an SSL-enabled service. 
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/14.png)
 <br>
 After accepting the SSL certificate, we observe that the service resembles the one previously accessed over TCP. We then attempt to access the /flag endpoint via the browser, which results in the successful retrieval of the fourth flag.
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/15.png){: .align-center}
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/16.png){: .align-center}
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/15.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/16.png)
 ## Flag #5: Connect to the SSH service
 Almost at the end, the challenge asks us to get the flag through SSH. This involves a brute-force approach, where we try different username and password combinations. While there are many tools to do this, we'll use the ssh_login module from Metasploit.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/17.png)
@@ -120,11 +120,9 @@ By accessing the service via the command-line interface with the discovered cred
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/19.png)
 ## Flag #6: Connect to the FTP service
 Finally, we need to retrieve the flag from an FTP service. While FTP typically runs on port 21 by default, it's always a good practice to confirm this using the Nmap results. We'll attempt to connect to the service via the CLI. As an initial test, we'll check whether the **anonymous** user is enabled, as many FTP servers are configured to allow this by default. After successfully authenticating as the **anonymous** user without a password, listing the server's contents reveals our final flag.
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/20.png){: .align-center}
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/20.png)
 <br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/21.png)
 <br>
 ### Reference links
