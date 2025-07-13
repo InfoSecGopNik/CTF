@@ -92,3 +92,9 @@ We successfully captured the flag for the first challenge because the form only 
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/9.png)
 ## Flag #2: Admin panel
 The objective of the second challenge is to access the admin panel. From our prior enumeration, we identified a potentially interesting directory disclosed in the robots.txt file. We then copy the path and navigate to it directly.
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/10.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/11.png)
+<br>
+Although we successfully accessed the admin panel, there were no visible elements or functionalities allowing authentication with valid credentials. However, by re-examining the page using the **browser’s developer tools**, we find the second flag embedded in the front-end code.
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/12.png)
+## Flag #3: Connect to the TCP service
