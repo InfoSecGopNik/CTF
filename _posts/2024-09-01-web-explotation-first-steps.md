@@ -197,11 +197,8 @@ If we use the **Web developer tools**, in the **Storage** tab we have all the co
 As we saw in the result of the third flag, it is possible to modify or delete the value of our attributes and cookies are no exception. By modifying the value of our cookie to True and then refreshing the page, we see that it was possible to access the admin portal and get the last flag of our series of challenges.
 <br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
-<br>
-<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/Web_exploitation_first_steps/26.png)
-
-
+<br>
 ### Reference links
 <li>https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages</li>
 <li>https://developer.chrome.com/docs/devtools/network/reference</li>
