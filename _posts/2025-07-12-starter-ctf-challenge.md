@@ -69,7 +69,12 @@ As a first step, we'll perform a port scan using Nmap with the following command
 nmap -sSV -p- –min-rate 5000 <IP>
 ```
 The -sS option performs a SYN scan, which—unlike a full TCP connect scan—does not complete the three-way handshake. The -sV option enables service version detection through banner grabbing. Since both are part of the -s family of options, Nmap allows them to be combined as -sSV. Additionally, the -p- flag tells Nmap to scan all 65,535 TCP ports. Finally, the --min-rate 5000 option is used to send packets as quickly as possible, which is especially useful when scanning all ports. If you're only targeting specific ports or using a common port list, the impact of this option is minimal.
-
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/1.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/3.png){: .align-center}
+<br>
+## Flag #1: Website login
+In the first challenge, we’re presented with a web application that asks for a username, a password, and a value called 'Secret'. However, the 'Secret' field is not available for the user to fill in.
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/4.png)
