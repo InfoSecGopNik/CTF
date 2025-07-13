@@ -70,7 +70,7 @@ As a first step, we'll perform a port scan using Nmap with the following command
 ```html
 nmap -sSV -p- –min-rate 5000 <IP>
 ```
-The -sS option performs a SYN scan, which—unlike a full TCP connect scan—does not complete the three-way handshake. The -sV option enables service version detection through banner grabbing. Since both are part of the -s family of options, Nmap allows them to be combined as -sSV. Additionally, the -p- flag tells Nmap to scan all 65,535 TCP ports. Finally, the --min-rate 5000 option is used to send packets as quickly as possible, which is especially useful when scanning all ports. If you're only targeting specific ports or using a common port list, the impact of this option is minimal.
+The **-sS** option performs a **SYN scan**, which—unlike a full TCP connect scan—does not complete the three-way handshake. The **-sV** option enables service version detection through banner grabbing. Since both are part of the **-s** family of options, Nmap allows them to be combined as **-sSV**. Additionally, the **-p-** flag tells Nmap to scan all 65,535 TCP ports. Finally, the **--min-rate 5000** option is used to send packets as quickly as possible, which is especially useful when scanning all ports. If you're only targeting specific ports or using a common port list, the impact of this option is minimal.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/1.png)
 <br>
 Once we've listed the ports and services, we'll try connecting to each of them.
@@ -111,7 +111,7 @@ After accepting the SSL certificate, we observe that the service resembles the o
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/15.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/16.png)
 ## Flag #5: Connect to the SSH service
-Almost at the end, the challenge asks us to get the flag through SSH. This involves a brute-force approach, where we try different username and password combinations. While there are many tools to do this, we'll use the ssh_login module from Metasploit.
+Almost at the end, the challenge asks us to get the flag through SSH. This involves a brute-force approach, where we try different username and password combinations. While there are many tools to do this, we'll use the **ssh_login** module from **Metasploit**.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/17.png)
 <br>
 To proceed, we configure the required parameters and select a typical username such as **admin** or **root**, commonly present in SSH services. Upon running the attack with a password dictionary, we find that the **admin** user is using a default password, which is successfully discovered by the module.
