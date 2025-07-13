@@ -36,7 +36,7 @@ date: 2025-07-12
     </tr>
         <tr>
       <td>Connect to the SSH service</td>
-      <td>Can you find and connect to the SSH service on the 10.6.0.2 server?.<br>
+      <td>Can you find and connect to the SSH service on the 10.6.0.2 server?<br>
         Hint: The username is admin.</td>
     </tr>
         <tr>
