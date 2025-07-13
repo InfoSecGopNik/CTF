@@ -78,3 +78,22 @@ The -sS option performs a SYN scan, which—unlike a full TCP connect scan—doe
 In the first challenge, we’re presented with a web application that asks for a username, a password, and a value called 'Secret'. However, the 'Secret' field is not available for the user to fill in.
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/4.png)
+
+Using the **browser's developer tools**, we'll inspect the 'Secret' field and observe a string that is likely encoded.
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/5.png)
+
+After copying the encoded value, we analyze it with CyberChef and determine that it was encoded using Base64.
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/6.png)
+
+Now that we’ve obtained the 'Secret' value, we’ll enable the input field by removing the 'disabled' attribute in the front end, and then test the form using any username and password along with the decoded Secret.
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/7.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/8.png)
+
+We successfully captured the flag for the first challenge because the form only checks the 'Secret' value and ignores the username and password.
+<br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/10.png)
+<br>
+## Flag #2: Admin panel
