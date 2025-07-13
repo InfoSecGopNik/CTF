@@ -7,7 +7,7 @@ date: 2025-07-12
 <br>
 
 ## Overview
-**Starter CTF challenge** Continuing the series that launched this blog, we're introducing another beginner-level challenge titled Starter CTF Challenge. In this exercise, we'll apply the concepts covered in Web Exploitation – First Steps and expand our focus to analyzing other protocols, such as SSL, SSH, and FTP. As always, we'll rely on The Principle of Parsimony as our guiding methodology to approach and solve every challenge we share on this blog.
+**Starter CTF challenge** Continuing the series that launched this blog, we're introducing another beginner-level challenge. In this exercise, we'll apply the concepts covered in Web Exploitation – First Steps and expand our focus to analyzing other protocols, such as SSL, SSH, and FTP. As always, we'll rely on The Principle of Parsimony as our guiding methodology to approach and solve every challenge we share on this blog.
 ## Challenge Info
 <table>
   <thead>
