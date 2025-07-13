@@ -7,6 +7,7 @@ date: 2025-07-12
 <br>
 ## Overview
 **Starter CTF challenge** Continuing the series that launched this blog, we're introducing another beginner-level challenge. In this exercise, we'll apply the concepts covered in Web Exploitation – First Steps and expand our focus to analyzing other protocols, such as SSL, SSH, and FTP. As always, we'll rely on The Principle of Parsimony as our guiding methodology to approach and solve every challenge we share on this blog.
+<br>
 ## Challenge Info
 <table>
   <thead>
@@ -53,6 +54,7 @@ date: 2025-07-12
 <li>Metasploit (optional)</li>
 <li>SecLists (https://github.com/danielmiessler/SecLists)</li>  
 </ul>
+<br>
 ## Enumeration
 For this challenge, the key will be thorough enumeration at the protocol and service level. To achieve this, we must take the following points into account:
 <li>To list files and directories (using ffuf, wfuzz, feroxbuster, etc).</li>
@@ -67,6 +69,7 @@ As a first step, we'll perform a port scan using Nmap with the following command
 nmap -sSV -p- –min-rate 5000 <IP>
 ```
 The -sS option performs a SYN scan, which—unlike a full TCP connect scan—does not complete the three-way handshake. The -sV option enables service version detection through banner grabbing. Since both are part of the -s family of options, Nmap allows them to be combined as -sSV. Additionally, the -p- flag tells Nmap to scan all 65,535 TCP ports. Finally, the --min-rate 5000 option is used to send packets as quickly as possible, which is especially useful when scanning all ports. If you're only targeting specific ports or using a common port list, the impact of this option is minimal.
+
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/1.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/2.png)
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/3.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/3.png){: .align-center}
