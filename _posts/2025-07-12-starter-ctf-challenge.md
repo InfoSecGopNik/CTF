@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Call an Ambulance
-tags: CTF, Deloitte, Portal.Hackazon, WebApp, SSL
-date: 2025-06-08
+title: Starter CTF challenge
+tags: CTF, Deloitte, Portal.Hackazon, WebApp, SSL, TCP, SSH, FTP
+date: 2025-07-12
 ---
 <br>
 
