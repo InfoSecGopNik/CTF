@@ -70,30 +70,30 @@ nmap -sSV -p- –min-rate 5000 <IP>
 ```
 The -sS option performs a SYN scan, which—unlike a full TCP connect scan—does not complete the three-way handshake. The -sV option enables service version detection through banner grabbing. Since both are part of the -s family of options, Nmap allows them to be combined as -sSV. Additionally, the -p- flag tells Nmap to scan all 65,535 TCP ports. Finally, the --min-rate 5000 option is used to send packets as quickly as possible, which is especially useful when scanning all ports. If you're only targeting specific ports or using a common port list, the impact of this option is minimal.
 <br>
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/1.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/3.png){: .align-center}
-<br>
 ## Flag #1: Website login
 In the first challenge, we’re presented with a web application that asks for a username, a password, and a value called 'Secret'. However, the 'Secret' field is not available for the user to fill in.
 <br>
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/4.png)
-
 Using the **browser's developer tools**, we'll inspect the 'Secret' field and observe a string that is likely encoded.
 <br>
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/5.png)
-
 After copying the encoded value, we analyze it with CyberChef and determine that it was encoded using Base64.
 <br>
+<br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/6.png)
-
 Now that we’ve obtained the 'Secret' value, we’ll enable the input field by removing the 'disabled' attribute in the front end, and then test the form using any username and password along with the decoded Secret.
+<br>
 <br>
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/7.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/8.png)
-
 We successfully captured the flag for the first challenge because the form only checks the 'Secret' value and ignores the username and password.
 <br>
-![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/10.png)
 <br>
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/10.png)
 ## Flag #2: Admin panel
