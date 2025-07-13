@@ -99,7 +99,7 @@ The objective of the second challenge is to access the admin panel. From our pri
 Although we successfully accessed the admin panel, there were no visible elements or functionalities allowing authentication with valid credentials. However, by re-examining the page using the **browser’s developer tools**, we find the second flag embedded in the front-end code.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/12.png)
 ## Flag #3: Connect to the TCP service
-The third challenge involves retrieving a flag via direct interaction with a TCP service. According to the Nmap results, the host is running a service on port 8080. Using Ncat, we connect to this port with **nc <IP> <PORT>** and receive a prompt indicating that the keyword flag must be submitted to proceed. Given that this is a web service, we then send a manual **HTTP GET** request to /flag using nc, which returns the third flag.
+The third challenge involves retrieving a flag via direct interaction with a TCP service. According to the Nmap results, the host is running a service on port 8080. Using Ncat, we connect to this port with nc <IP> <PORT> and receive a prompt indicating that the keyword flag must be submitted to proceed. Given that this is a web service, we then send a manual HTTP GET request to /flag using nc, which returns the third flag.
 
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/starter-ctf-challenge/13.png)
 ## Flag #4: Connect to the SSL service
