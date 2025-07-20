@@ -26,14 +26,12 @@ date: 2025-07-20
     </tr>
   </tbody>
 </table>
-<br>
 ## Tools
 <ul>
 <li>Kali linux (optional)</li>
 <li>Nmap</li>
 <li>openssl</li>
 </ul>
-<br>
 ## Enumeration
 After establishing the VPN connection, properly enumerating the available protocols and services will be essential. Here are the key points to keep in mind:
 <li>To list files and directories (using ffuf, wfuzz, feroxbuster, etc).</li>
@@ -45,17 +43,15 @@ After establishing the VPN connection, properly enumerating the available protoc
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/1.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/2.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/3.png)
-<br>
 We checked the main directories and important sections of the web application but didn’t find anything that stood out. Let’s move on to analyzing the challenge.
 
 ## Flag: SSL (Secure Sockets Later)
 Based on the challenge name and the data collected during the reconnaissance phase, our approach should focus on interacting with an SSL service. The initial step is to test the connection using the **openssl** utility, specifically the **s_client** option, by providing the target IP address and port.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/4.png)
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/5.png)
-
+<br>
 After connecting to the server with OpenSSL, we notice something unusual in the certificate—it contains the acronym 'CTF'. The challenge hints at replacing two characters, so we copy the string and swap '/' for '{}', which gives us the flag.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/6.png)
-<br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/7.png)
 <br>
