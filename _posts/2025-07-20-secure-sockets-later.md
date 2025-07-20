@@ -42,12 +42,22 @@ After establishing the VPN connection, properly enumerating the available protoc
 <li>Test connections with other services.</li>
 
 <br>
-
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/1.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/2.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/3.png)
+<br>
+We checked the main directories and important sections of the web application but didn’t find anything that stood out. Let’s move on to analyzing the challenge.
 
 ## Flag: SSL (Secure Sockets Later)
+Based on the challenge name and the data collected during the reconnaissance phase, our approach should focus on interacting with an SSL service. The initial step is to test the connection using the **openssl** utility, specifically the **s_client** option, by providing the target IP address and port.
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/4.png)
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/5.png)
 
+After connecting to the server with OpenSSL, we notice something unusual in the certificate—it contains the acronym 'CTF'. The challenge hints at replacing two characters, so we copy the string and swap '/' for '{}', which gives us the flag.
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/6.png)
+<br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
-![]
+![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/7.png)
 <br>
 ### Reference links
 <li>https://www.liquidweb.com/blog/how-to-test-ssl-connection-using-openssl/</li>
