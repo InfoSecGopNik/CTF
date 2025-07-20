@@ -52,6 +52,7 @@ Based on the challenge name and the data collected during the reconnaissance pha
 <br>
 After connecting to the server with OpenSSL, we notice something unusual in the certificate—it contains the acronym 'CTF'. The challenge hints at replacing two characters, so we copy the string and swap '/' for '{}', which gives us the flag.
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/6.png)
+<br>
 **This is everything, I hope you enjoyed the write-up and learned something new. Happy hacking! :)**
 ![](https://raw.githubusercontent.com/InfoSecGopNik/CTF/main/_posts/images/secure-sockets-later/7.png)
 <br>
